@@ -7,7 +7,7 @@ const Email = () => {
         const formEl = e.target;
         const input0 = formEl[0];
         console.log(input0.value);
-        navigate('./postal')
+        navigate('../postal')
     };
     return (
         <form onSubmit={validateOnSubmit}>

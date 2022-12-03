@@ -1,4 +1,3 @@
-import React, { Children, useState } from 'react'
 import "./index.css";
 
 const Modal = ({children, toggleModal}) => {

@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="App">
         <h1>Welcome to Hemkraft!</h1>
-        <Link to="/household">Enter my household info</Link>
+        <Link to="/household/email">Enter my household info</Link>
     </div>
   )
 }
