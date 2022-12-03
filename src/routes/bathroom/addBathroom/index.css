@@ -1,0 +1,14 @@
+.add-bathroom-form {
+    display: flex;
+    gap: 25px;
+}
+.half-bathroom {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.bathroom-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+}

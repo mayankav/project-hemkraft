@@ -1,8 +1,17 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import { Outlet } from 'react-router-dom'
+import {bathroomsList} from './dummyData'
 const Bathroom = () => {
+  const [bathroomList, setBathroomList] = useState(bathroomsList);
   return (
-    <div>Bathroom</div>
+    <>
+      <Outlet context={
+        {
+          bathroomList: bathroomList, 
+          setBathroomList: setBathroomList
+        }
+          } />
+    </>
   )
 }
 

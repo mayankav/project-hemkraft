@@ -7,10 +7,13 @@ const Phone = () => {
     const [agree, setAgree] = useState(false)
     const navigate = useNavigate();
     const submitHandler = () => {
-        navigate('./other');
+        navigate('../moreinfo');
     }
     const onAgreeChange = (val) => {
         setAgree(val);
+    }
+    const onNextClickHandler = () => {
+        navigate('../moreinfo')
     }
     return (
         <>
@@ -19,13 +22,15 @@ const Phone = () => {
                 <ToggleSwitch checked={agree} onChangeHandler={onAgreeChange} />
             </span>
             
-            <form onSubmit={submitHandler}>
+            {agree ? <form onSubmit={submitHandler}>
                 <p>Please enter your phone number</p>
                 <input placeholder="Area code" />
                 <input placeholder="Number" />
                 <input placeholder="Phone type" />
                 <button type="submit">Submit</button>
             </form>
+            :  <button onClick={onNextClickHandler}>Next</button>}
+            
         </>
     )
 }

@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
 import Modal from '../../../components/Modal';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const PostalCode = () => {
     const [showModal, setShowModal] = useState(false);
     const [code, setCode] = useState('');
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     const validateOnSubmit = (e) => {
         e.preventDefault();
         const formEl = e.target;
         const input0 = formEl[0];
         console.log(input0.value);
-        setShowModal(true)
-        //navigate('./phone')
+        setShowModal(true);
     };
 
     const onChangePostalCode = (e) => {
@@ -24,7 +23,7 @@ const PostalCode = () => {
             <input placeholder="Please enter your postal code" value={code} onChange={onChangePostalCode} />
             <button type="submit">Submit</button>
         </form>
-        {showModal && 
+        {showModal &&
             <Modal toggleModal={setShowModal}>
                 <h2>You entered the following postal code:</h2>
                 <p>{code}</p>
@@ -32,12 +31,15 @@ const PostalCode = () => {
                 <span>
                     <button onClick={() => {
                         setShowModal(false)
+                        navigate('../phone')
+                        
                     }}>Yes</button>
                     <button onClick={() => {
                         setShowModal(false)
                     }}>No</button>
                 </span>
             </Modal>}
+            
         </>
     )
 }
